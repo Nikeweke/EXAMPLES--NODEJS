@@ -18,7 +18,16 @@
 * **Pug** - шаблонизатор (Jade)
 * **Nunjucks** - шаблонизатор похож на Blade(Laravel) 
 * **Stylus** - шаблонизатор для CSS-стилей как Pug(Jade)
+* **node-validator** - проверка данных на валидность(почта и т.д.)
+* **Forever** - Перезапускает приложение после падения 
 
+##### Forever 
+```cmd
+// cmd
+forever start -a -l forever.log -o out.log -e err.log app.js
+```
+
+ 
 ##### Colors
 ```js
 var colors = require('colors');  // colors
