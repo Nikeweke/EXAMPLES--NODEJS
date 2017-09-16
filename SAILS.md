@@ -1,4 +1,4 @@
-# Проект на Sails(Node) - Basic + Локализация
+# Sails JS
 
 #### Понятный курс по адресу: https://www.youtube.com/watch?v=HrchcED6TKY
 
