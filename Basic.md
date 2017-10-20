@@ -1,3 +1,4 @@
+
 >   Чтобы запустить файл для node.js 
 >   надо перейти в ту директорию где лежит файл app.js и тогда написать в cmd или Git bash - node app.js
 
@@ -17,7 +18,7 @@ var server = http.createServer(function(req, res)
                 console.log('request was made: ' + req.url);
 
                 // отсылаем ответ
-                res.end('Shit');
+                res.end('sample');
              });
              
 // запуск сервера
@@ -53,7 +54,7 @@ module.exports.pi = pi;
 //------app.js
 stuff = require('./count')
 
-console.log(stuff.counter(['shit', 'crystal']))
+console.log(stuff.counter(['sample', 'crystal']))
 console.log(stuff.counter1(1,2))
 ```
 
@@ -81,14 +82,14 @@ eventEmitter.emit('Boom');
 var fs = require('fs'); // подключаем библиотеку для чтения и записи файла
 
 //------------------------ ....FileSync - указывает на то что пока не прочитаю файл до конца не пойду дальше - Синхронно
-var shitTxt = fs.readFileSync('shit.txt', 'utf8'); // читаем файла
-console.log(shitTxt); // выводим
+var sampleTxt = fs.readFileSync('sample.txt', 'utf8'); // читаем файла
+console.log(sampleTxt); // выводим
 
-fs.writeFileSync('writeMe.txt', shitTxt); // создает и пишет в него то что есть в файле "shit.html"
+fs.writeFileSync('writeMe.txt', sampleTxt); // создает и пишет в него то что есть в файле "sample.html"
 //------------------------
 
 //------------------------ ....File - указывает на то что код пойдет выполянться дальше - Асинхрон
-fs.readFile('shit.txt', 'utf8', function(err, data)
+fs.readFile('sample.txt', 'utf8', function(err, data)
 {
   fs.writeFile('writeMe.txt', data);
 })
@@ -137,7 +138,7 @@ fs.mkdir('stuff', function()
 ```javascript
 var fs = require('fs');
 
-var myReadStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8');
+var myReadStream = fs.createReadStream(__dirname + '/sample.txt', 'utf8');
 
 myReadStream.on('data', function(chunk)
  {
@@ -152,8 +153,8 @@ myReadStream.on('data', function(chunk)
 ```javascript
 var fs = require('fs');
 
-var myReadStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
-var WStream = fs.createWriteStream(__dirname + '/Wshit.txt'); // создание потока который пишет
+var myReadStream = fs.createReadStream(__dirname + '/sample.txt', 'utf8'); // создание потока который читает
+var WStream = fs.createWriteStream(__dirname + '/Wsample.txt'); // создание потока который пишет
 
 myReadStream.on('data', function(chunk)
  {
@@ -171,8 +172,8 @@ myReadStream.on('data', function(chunk)
 ```javascript
 var fs = require('fs');
 
-var RStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
-var WStream = fs.createWriteStream(__dirname + '/Wshit.txt'); // создание потока который пишет
+var RStream = fs.createReadStream(__dirname + '/sample.txt', 'utf8'); // создание потока который читает
+var WStream = fs.createWriteStream(__dirname + '/Wsample.txt'); // создание потока который пишет
 
 // Направить прочитанную информацию для записи в файл
 RStream.pipe(WStream);
@@ -190,7 +191,7 @@ var server = http.createServer(function(req, res)
                 // вывести какой запрос был
                 console.log('request was made: ' + req.url);
 
-                var RStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
+                var RStream = fs.createReadStream(__dirname + '/sample.txt', 'utf8'); // создание потока который читает
 
                 // отсылаем ответ 
                 // данные прочитаные с файла отдаем в ответ
