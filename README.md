@@ -76,8 +76,8 @@ var employeeName = employee.Name || "Unknown";
 **4)** Как сделать JS более производительным?
 > https://medium.com/devschacht/3-tips-about-javascript-597c33a219d6
 
-**5)** Не всегда `undefined` это не обозначеное что-то. может быть так.
-```
+**5)** Не всегда `undefined` это не обозначеное что-то. Может быть подмена "undefined":
+```js
 const undefined = 'asd'
 let ss = undefined
 
