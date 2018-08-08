@@ -53,3 +53,13 @@ function doubleAfter1Sec(param) {
 }
 ```
 
+**2)** Как проверить обьект на пустоту или `undefined`
+```js
+// if object === 'undefined', undefined
+// else it will be 'number'
+if(typeof from.date.year === 'number'){   
+  console.log('Here')
+} else{
+  console.log('ehhh')
+}
+```
