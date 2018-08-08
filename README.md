@@ -12,7 +12,6 @@
 Установить NodeJS с официального сайта
 ```js 
 // app.js
-
 console.log('Hello world')
 ```
 ```bash
