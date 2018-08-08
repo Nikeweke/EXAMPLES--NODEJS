@@ -53,7 +53,7 @@ function doubleAfter1Sec(param) {
 }
 ```
 
-**2)** Как проверить обьект на пустоту или `undefined`
+**2)** Как проверить свойство обьекта на пустоту или `undefined`?
 ```js
 // if object === 'undefined', undefined
 // else it will be 'number'
