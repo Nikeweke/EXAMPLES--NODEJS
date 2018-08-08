@@ -1,8 +1,7 @@
-# Sails JS
+# Sails JS - framework for node
 
-#### Понятный курс по адресу: https://www.youtube.com/watch?v=HrchcED6TKY
+#### Tutorial: https://www.youtube.com/watch?v=HrchcED6TKY
 
----
 * Комманды в консоле
 * Localize stuff
 * Services
@@ -14,10 +13,7 @@
 * В Продакшене
 * req(Request)
 
-
 ---
-
-
 
 ## Комманды в консоле:
 * **sails lift** - поднять сервер Sails
