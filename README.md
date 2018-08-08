@@ -63,3 +63,25 @@ if(typeof from.date.year === 'number'){
   console.log('ehhh')
 }
 ```
+
+**3)** Упрощение тернарного (?:) оператора.
+```
+// Тернарный оператор
+let employeeName = (employee.Name != null ? employee.Name : "Unknown"); 
+
+// Упрощенный стиль (php analog: $var ?? null)
+var employeeName = employee.Name || "Unknown"; 
+```
+
+**4)** Как сделать JS более производительным?
+> https://medium.com/devschacht/3-tips-about-javascript-597c33a219d6
+
+**5)** Не всегда `undefined` это не обозначеное что-то. может быть так.
+```
+const undefined = 'asd'
+let ss = undefined
+
+// Как нам проверить что переменная действительно "undefined"?
+console.log(ss === undefined)  // true !! - undefined стала строкой, созданой выше
+console.log(ss === void 0)  // false - "void 0" вернет действительно undefined, который нужен для проверки
+```
