@@ -1,7 +1,7 @@
 # Node + Typescript 
 
 ### Article
-* [Medium](https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d]
+* [Medium](https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d)
 * [Typescript - tutorialPoint](https://www.tutorialspoint.com/typescript/typescript_tuples.htm)
 
 ### Quick start
