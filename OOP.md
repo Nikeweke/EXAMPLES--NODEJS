@@ -1,20 +1,26 @@
 # JS - OOP 
 #### ES6 vs Prototypes
 
-Содержание 
+Содержание
+* ES6 Classes features
 * Создание класса
 * Private and public fields
 * Наследование 
-* Переопределение
 * Вызов родительского конструктора
-* Setters, Getters and Static
 
 --- 
 
 
+### ES6 Classes features
+* constructor
+* static methods
+* setters/getters
+* extends
+
+
 ### Создание класса
 ```js
-// # function-class
+// Function-class
 function Animal (name, size) {
   // нет явного конструктора,
   // используем переданные параметры функции
@@ -34,7 +40,7 @@ anim.sayHello()
 ```
 
 ```js
-// # es6 class
+// ES6 class
 class Animal {
   constructor (name, size) {
 	// поля (свойства)
@@ -54,7 +60,7 @@ anim.sayHello()
 
 ### Private and public fields
 ```js
-// function-class
+// Function-class
 function Animal () {
   let private_var = 'i am private here'
   this.public_var = 'i am public 1'
@@ -74,14 +80,32 @@ console.log(anim.getPrivateVar())
 ```
 
 ```js
+// ES6 class
+class Animal {
+  constructor () {
+	var private_var = 'i am private here'
+ 	this.public_var = 'i am public 1'
+  }
+  
+  getPrivateVar () {
+    return this.private_var
+  }
+  
+  setPrivateVar(value) {
+    this.private_var = value
+  }
+}
+
+const anim = new Animal()
+anim.setPrivateVar('Alloha')
+console.log(anim.getPrivateVar())
 ```
 
 
 ### Наследование 
 ```js
-// function-class
-// !!! наследование сделанное через прототипы
-// !!! работает быстрее
+// Function-class
+// наследование сделанное через прототипы работает быстрее
 function Car(){}
 function Volvo(){}
 // Volvo extends Car (with prototypes)
@@ -92,7 +116,7 @@ console.log(Volvo)
 ```
 
 ```js
-// es6 class
+// ES6 class
 class Animal{}
 class Dog extends Animal {}
 
@@ -102,14 +126,14 @@ console.log(Dog)
 
 ### Вызов родительского конструктора
 ```js
-//function-class
+// Function-class
 function Cat () {
   Animal.call(this) 
 }
 ```
 
 ```js
-// es6 class
+// ES6 class
 class Cat extends Animal {
   constructor() {
     super()
