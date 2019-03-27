@@ -4,6 +4,11 @@
 **Cluster** - это built-in модуль предоставляет способ создания дочерних процессов, 
 которые выполняются одновременно и совместно используют один и тот же порт сервера.
 
+### Libraries
+- `cluster` - native node module
+- `cluster2` - 3-rd libary for clusters with new features
+- `pm2` - process manager for clusters handling
+
 ### Это ключевая проверка, без неё будет ругаться на `fork`
 ```js
 const cluster = require('cluster')
