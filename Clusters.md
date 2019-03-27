@@ -4,13 +4,27 @@
 **Cluster** - это built-in модуль предоставляет способ создания дочерних процессов, 
 которые выполняются одновременно и совместно используют один и тот же порт сервера.
 
+### Это ключевая проверка, без неё будет ругаться на `fork`
+```js
+const cluster = require('cluster')
+
+// запускаем два процесса которые выведут "Here"
+if (cluster.isMaster) {
+  cluster.fork()  
+  cluster.fork()
+} else {
+  console.log('Here')
+}
+```
+
+
 ### Настройка мастер-кластера и `fork` от него
 ```js
 const cluster = require('cluster');
 
 // Настраиваем кластер, от которого потом запускаем процесс "fork"
 cluster.setupMaster({
-  exec: __dirname + '/worker.js',
+  exec: __dirname + '/worker.js',  // тут просто console.log
   args: ['--use', 'https'],
 })
 
@@ -20,7 +34,7 @@ cluster.fork()
 
 // Настраиваем кластер, на другой процесс
 cluster.setupMaster({
-  exec: __dirname + '/server.js',
+  exec: __dirname + '/server.js', // тут просто console.log
   silent: false  // запрещает вывод всех исходящих из процесса console.log() и т.д.
 })
 
@@ -40,6 +54,7 @@ if (cluster.isMaster) {
   cluster.on('exit', (worker, code, signal) => {
     console.log(`worker ${worker.process.pid} died`);
   });
+  
 } else {
   // Workers can share any TCP connection
   // In this case it is an HTTP server
