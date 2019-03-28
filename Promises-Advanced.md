@@ -1,5 +1,11 @@
 # Promises `Advanced` using + `reduce`
 
+#### Links
+* [CSS tricks](https://css-tricks.com/why-using-reduce-to-sequentially-resolve-promises-works/)
+* [HeavyMetalCoder](https://www.heavymetalcoder.com/make-array-foreach-synchronous-even-with-an-asynchronous-body/)
+
+--- 
+
 array.reduce(callback[, initialValue])
 * callback - Функция, выполняющаяся для каждого элемента массива, принимает четыре аргумента:
    + accumulator - Аккумулятор, аккумулирующий значение, которое возвращает функция callback после посещения очередного элемента, либо значение initialValue, если оно предоставлено (смотрите пояснения ниже).
@@ -10,7 +16,7 @@ array.reduce(callback[, initialValue])
 
 
 ### Insert a few records with check of previous
-We want to insert a few records, but want make it sequntially and check if previos inserted well
+We want to insert a few records, but want make it sequntially and check if previous inserted well, kinda transaction.
 ```js
 function methodThatReturnsAPromise(id) {
   return new Promise((resolve, reject) => {
