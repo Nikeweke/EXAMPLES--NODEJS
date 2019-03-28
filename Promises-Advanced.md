@@ -51,11 +51,15 @@ Promise.resolve()
        .then(myAsyncFunction(1))
        .then(myAsyncFunction(2))
        .then(myAsyncFunction(3));
-       
+```
+
+```js
 // Equal to above, created with "reduce"       
 [1, 2, 3].reduce((promiseChain, arrayItem) =>
   promiseChain.then(() => myAsyncFunction(arrayItem)), Promise.resolve());
-  
+```
+
+```js
 // More verbose
 [2, 1, 3].reduce(
   // callback
