@@ -60,45 +60,26 @@ anim.sayHello()
 
 ### Private and public fields
 ```js
-// Function-class
+// ES5 - Function-class
 function Animal () {
-  let private_var = 'i am private here'
-  this.public_var = 'i am public 1'
+  var private_var = 'i am private here'
   
-  this.getPrivateVar = function () {
-    return private_var
-  }
-  
-  this.setPrivateVar = function (value) {
-    private_var = value
-  }
+  // using closure here
+  this.setPrivateVar = function(value) { private_var = value }
+  this.getPrivateVar = function() { return private_var }
 }
-
-const anim = new Animal()
-anim.setPrivateVar('Alloha')
-console.log(anim.getPrivateVar())
 ```
 
 ```js
 // ES6 class
 class Animal {
-  constructor () {
-	var private_var = 'i am private here'
- 	this.public_var = 'i am public 1'
-  }
-  
-  getPrivateVar () {
-    return this.private_var
-  }
-  
-  setPrivateVar(value) {
-    this.private_var = value
+   constructor() {
+    var private_var = 'i am private here'
+    // using closure here
+    this.setPrivateVar = function(value) { private_var = value }
+    this.getPrivateVar = function() { return private_var }
   }
 }
-
-const anim = new Animal()
-anim.setPrivateVar('Alloha')
-console.log(anim.getPrivateVar())
 ```
 
 
