@@ -1,10 +1,15 @@
 # Promises `Advanced`
+#### Содержание 
+* Control promises flow with returning `Promise.resolve` & `Promise.reject`
+* Insert a few records with check of previous
+* Make a chain with promises
+--- 
+
 #### Links
 * [9 полезных советов по Promise.resolve и Promise.reject](https://proglib.io/p/9-js-promise-advice/)
 * [CSS tricks](https://css-tricks.com/why-using-reduce-to-sequentially-resolve-promises-works/)
 * [HeavyMetalCoder](https://www.heavymetalcoder.com/make-array-foreach-synchronous-even-with-an-asynchronous-body/)
 
---- 
 
 `array.reduce(callback[, initialValue])`
 * callback - Функция, выполняющаяся для каждого элемента массива, принимает четыре аргумента:
@@ -16,7 +21,7 @@
 ---
 
 ### Control promises flow with returning `Promise.resolve` & `Promise.reject`
-```
+```js
 new Promise((res, rej) => { rej('here') })
 
 .catch(err => {
