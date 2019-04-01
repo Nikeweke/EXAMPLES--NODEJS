@@ -1,7 +1,7 @@
 # Promises Advanced
 #### Содержание 
-* Make delay to continue
 * Control promises flow with returning `Promise.resolve` & `Promise.reject`
+* Make delay to continue
 * Insert a few records with check of previous
 * Make a chain with promises
 --- 
