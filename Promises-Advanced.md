@@ -1,5 +1,6 @@
 # Promises Advanced
 #### Содержание 
+* Make delay to continue
 * Control promises flow with returning `Promise.resolve` & `Promise.reject`
 * Insert a few records with check of previous
 * Make a chain with promises
@@ -34,6 +35,12 @@ new Promise((res, rej) => { rej('here') })
 .then(r => console.log('then'))
 
 .catch(err => console.log('catch'));
+```
+
+### Make delay to continue
+```js
+new Promise((r, j) => setTimeout(r, 5000))
+.then(...)
 ```
 
 ### Insert a few records with check of previous
