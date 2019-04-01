@@ -1,6 +1,6 @@
-# Promises `Advanced` using + `reduce`
-
+# Promises `Advanced`
 #### Links
+* [9 полезных советов по Promise.resolve и Promise.reject](https://proglib.io/p/9-js-promise-advice/)
 * [CSS tricks](https://css-tricks.com/why-using-reduce-to-sequentially-resolve-promises-works/)
 * [HeavyMetalCoder](https://www.heavymetalcoder.com/make-array-foreach-synchronous-even-with-an-asynchronous-body/)
 
@@ -14,6 +14,22 @@
    + array [Необязательный] - Массив, для которого была вызвана функция reduce
 
 ---
+
+### Control promises flow with returning `Promise.resolve` & `Promise.reject`
+```
+new Promise((res, rej) => { rej('here') })
+
+.catch(err => {
+  if (err.statusCode === 400) {
+    return Promise.reject(err)
+  }
+  return Promise.resolve(err)
+})
+
+.then(r => console.log('then'))
+
+.catch(err => console.log('catch'));
+```
 
 ### Insert a few records with check of previous
 We want to insert a few records, but want make it sequntially and check if previous inserted well, kinda transaction.
