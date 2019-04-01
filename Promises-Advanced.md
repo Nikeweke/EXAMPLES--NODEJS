@@ -1,4 +1,4 @@
-# Promises `Advanced`
+# Promises Advanced
 #### Содержание 
 * Control promises flow with returning `Promise.resolve` & `Promise.reject`
 * Insert a few records with check of previous
