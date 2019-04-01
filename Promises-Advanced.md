@@ -1,6 +1,7 @@
 # Promises Advanced
 #### Содержание 
 * Control promises flow with returning `Promise.resolve` & `Promise.reject`
+* Dont make nested "then" 
 * Make delay to continue
 * Insert a few records with check of previous
 * Make a chain with promises
@@ -35,6 +36,30 @@ new Promise((res, rej) => { rej('here') })
 .then(r => console.log('then'))
 
 .catch(err => console.log('catch'));
+```
+
+### Dont make nested "then"
+###### Wrong
+```js
+new Promise((res, rej) => { res() })
+.then(() => {
+   new Promise(res, rej) => {res('Hello))
+      .then(data => console.log(data)) 
+})
+.then((data) => {
+  console.log(data) // "Hello"
+})
+.catch((err) => console.log('Error occured'))
+```
+
+###### Right
+```js
+new Promise((res, rej) => { res() })
+.then(() => new Promise(res, rej) => {res('Hello))})
+.then((data) => {
+  console.log(data) // "Hello"
+})
+.catch((err) => console.log('Error occured'))
 ```
 
 ### Make delay to continue
