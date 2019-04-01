@@ -39,25 +39,25 @@ new Promise((res, rej) => { rej('here') })
 ```
 
 ### Dont make nested "then"
-###### Wrong
 ```js
+// Wrong
 new Promise((res, rej) => { res() })
 .then(() => {
-   new Promise(res, rej) => {res('Hello))
-      .then(data => console.log(data)) 
+ somePromise()
+   .then((data) => console.log(data)) 
 })
 .then((data) => {
-  console.log(data) // "Hello"
+ console.log(data) // "Hello"
 })
 .catch((err) => console.log('Error occured'))
 ```
 
-###### Right
 ```js
+// Right
 new Promise((res, rej) => { res() })
-.then(() => new Promise(res, rej) => {res('Hello))})
+.then(() => somePromise())
 .then((data) => {
-  console.log(data) // "Hello"
+ console.log(data) // "somePromise" answer
 })
 .catch((err) => console.log('Error occured'))
 ```
