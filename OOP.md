@@ -85,24 +85,53 @@ class Animal {
 
 ### Наследование 
 ```js
-// Function-class
-// наследование сделанное через прототипы работает быстрее
-function Car(){}
-function Volvo(){}
-// Volvo extends Car (with prototypes)
-Volvo.prototype = Object.create(Car.prototype)
+// ES5 
+function Animal () {
+  this.hello = function() {
+    console.log('Hello from animal')
+  }
+}
 
-console.log(Car)   
-console.log(Volvo) 
+Animal.prototype.hello2 = function () {
+    console.log('Hello 2 from animal')
+}
+
+function Dog () {
+// Dog extends Animal that created inside
+  Animal.call(this)
+}
+// Dog extends Animal that created on prototype
+Dog.prototype = Object.create(Animal.prototype)
+
+let anim = new Animal()
+let dog = new Dog()
+
+anim.hello()
+dog.hello()
+dog.hello2()
 ```
 
 ```js
-// ES6 class
-class Animal{}
+// ES6 
+class Animal  {
+  hello () {
+    console.log('Hello from animal')
+  }
+}
+
+Animal.prototype.hello2 = function () {
+    console.log('Hello 2 from animal')
+}
+
+// Dog extends Animal that created inside
 class Dog extends Animal {}
 
-console.log(Animal)
-console.log(Dog)
+let anim = new Animal()
+let dog = new Dog()
+
+anim.hello()
+dog.hello()
+dog.hello2()
 ```
 
 ### Вызов родительского конструктора
