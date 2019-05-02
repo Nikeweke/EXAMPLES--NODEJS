@@ -1,4 +1,4 @@
-## Firebase entity class for firebase realtime DB
+## Firebase DB realtime
 
 ### Firebase API
 **`{GET}` - Get items**
@@ -56,7 +56,7 @@ https://[database-name].firebaseio.com/[collection-name]/[key]/[field].json
 
 
 /**
- * FirebaseEntity its class,
+ * FirebaseEntity - class for firebase realtime DB,
  * that have CRUD functions that allow to work with some nested object in realtime db 
  */
 
