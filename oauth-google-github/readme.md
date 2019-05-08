@@ -5,6 +5,7 @@
 
 ### Где взять clientID, clientSecret?
 ```js
+// keys.js
 // add to .gitignore
 
 module.exports = {
