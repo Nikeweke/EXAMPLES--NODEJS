@@ -5,5 +5,10 @@
 ### Quick start
 
 ```sh
+# install deps
 npm i express passport passport-auth0 express-session -S
+
+# launch
+node app
 ```
+
