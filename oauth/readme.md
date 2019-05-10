@@ -3,6 +3,6 @@
 * Какая разница между OAuth & Auth0?
 * Схема разницы между обычным использованием OAuth & Auth0(сервиса)?
 
-Более подробно [здесь](https://nikeweke.github.io/EXPA/authes/intro.html)
+Ответы на вопросы [здесь](https://nikeweke.github.io/EXPA/authes/intro.html)
 
 
