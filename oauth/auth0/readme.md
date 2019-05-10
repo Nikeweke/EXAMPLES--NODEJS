@@ -8,6 +8,8 @@
 # install deps
 npm i express passport passport-auth0 express-session -S
 
+# insert your keys into keys.js of Auth0 app
+
 # launch
 node app
 ```
