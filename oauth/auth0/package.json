@@ -1,0 +1,21 @@
+{
+  "name": "auth0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "demon": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "passport": "^0.4.0",
+    "passport-auth0": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
