@@ -13,7 +13,7 @@
 6. Там будет "Идентификаторы клиентов OAuth 2.0", заходим в первый ключ и берем из него "Идентификатор клиента" и "Секрет клиента" для passport-google-auth 
 
 #### Github
-1. Зайти на [сюда](https:ithub.com/settings/developers)
+1. Зайти [сюда](https:ithub.com/settings/developers)
 2. Создать свое приложение
 3. Зайти в него и получить Client ID & Client Secret
 4. Юзать по приципу OAuth Google
