@@ -34,6 +34,53 @@ https://[database-name].firebaseio.com/[collection-name]/[key].json
 https://[database-name].firebaseio.com/[collection-name]/[key]/[field].json
 ```
 
+### Firebase-API
+```js
+function FirebaseCRUD (table) {
+  this.table = table || ''
+  this.FIREBASE_API = function(id) {
+   return https://zorg-007.firebaseio.com/${id ? this.table + '/' + id : this.table}.json
+  }
+}
+
+FirebaseCRUD.prototype.request = function(url, method, data) {
+ let options = {
+    method: method || 'GET', // *GET, POST, PUT, DELETE, etc.
+    body: data ? JSON.stringify(data) : null,
+  headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+ } 
+ return fetch(url, options)
+  .then((response) => response.json())
+  // alert(response.headers.get('Content-Type')) // application/json charset=utf-8
+    // alert(response.status) // 200
+  .catch(alert)
+}
+
+FirebaseCRUD.prototype.get = function(id = null) {
+  let url = this.FIREBASE_API(id)
+  return this.request(url)
+}
+
+FirebaseCRUD.prototype.create = function(data) {
+  let url = this.FIREBASE_API()
+    // let data = {name: 'Fedor', surname: 'Alik'}
+  return this.request(url, 'POST', data)
+}
+
+FirebaseCRUD.prototype.update = function(id, data) {
+  let url  = this.FIREBASE_API(id)
+  return this.request(url, 'PUT', data)
+}
+
+FirebaseCRUD.prototype.delete = function(id) {
+  let url  = this.FIREBASE_API(id)
+  return this.request(url, 'DELETE')
+}
+```
+
 ### Firebase-SDK
 ```js
 
