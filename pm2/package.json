@@ -1,0 +1,19 @@
+{
+  "name": "loggers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "tunnel": "ngrok http 8000",
+    "loadtest": "loadtest -c 10 --rps 200 http://localhost:8000/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "ngrok": "^3.1.1"
+  }
+}
