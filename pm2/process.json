@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name"        : "APP",
+      "script"      : "./app.js",
+      "instances"   : "max"
+    }
+  ]
+}
