@@ -97,28 +97,31 @@ result.then(e => {
 
 ### Make a chain with promises
 ```js
+myPromise(index, sec) {
+  return new Promise((res) => {
+    setTimeout(() => { res(`DONE ${index}#`) }, sec)
+  }).then((res) => {
+    console.log(res)
+  })
+}  
+```
+
+```js
 // Manually created chain 
 Promise.resolve()
-       .then(myAsyncFunction(1))
-       .then(myAsyncFunction(2))
-       .then(myAsyncFunction(3));
+   .then(() => myPromise(1, 3000))
+   .then(() => myPromise(2, 3000))
+   .then(() => myPromise(3, 3000))
 ```
 
 ```js
 // Equal to above, created with "reduce"       
-[1, 2, 3].reduce((promiseChain, arrayItem) =>
-  promiseChain.then(() => myAsyncFunction(arrayItem)), Promise.resolve());
-```
-
-```js
-// More verbose
-[2, 1, 3].reduce(
+const array = [1, 2, 3]
+array.reduce(
   // callback
-  (promiseChain, arrayItem) => {
-    return promiseChain.then(() => console.log(arrayItem))
-  },
+  (accumulator, currentValue, index) => accumulator.then(() => myPromise(index, 3000)), 
 
-  // initialValue
+  // initValue
   Promise.resolve()
-)
+);
 ```
