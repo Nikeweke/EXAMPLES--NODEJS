@@ -10,7 +10,7 @@
 * Dont make nested "then" 
 * Make delay to continue
 * Insert a few records with check of previous
-* Make a chain with promises
+* Make a chain with promises (waterfall)
 
 ---
 
@@ -95,7 +95,7 @@ result.then(e => {
 ```
 
 
-### Make a chain with promises
+### Make a chain with promises (waterfall)
 ```js
 myPromise(index, sec) {
   return new Promise((res) => {
