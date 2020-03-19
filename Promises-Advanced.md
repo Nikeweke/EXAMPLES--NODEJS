@@ -125,3 +125,28 @@ array.reduce(
   Promise.resolve()
 );
 ```
+
+```js
+// The most advanced way is wrapp all promises in func then check em all
+const promises = [
+  () => myPromise(1, 3000),
+  () => myPromise(2, 3000),
+  () => myPromise(3, 3000),
+] 
+
+   
+const promisesResult = promises.reduce(
+  // callback
+  (accumulator, currentValue, index) => {
+    return accumulator.then(
+    	() => currentValue().then((res) => { log.passed_queries = index+1; console.log(res); })
+    )
+  }, 
+
+  // initValue
+  Promise.resolve()
+);
+
+promisesResult.then(() => console.log("All done"))
+.catch((err) => { log.err = err.name || err; console.log('Error -', log) })
+```
