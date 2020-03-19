@@ -139,7 +139,7 @@ const promisesResult = promises.reduce(
   // callback
   (accumulator, currentValue, index) => {
     return accumulator.then(
-    	() => currentValue().then((res) => { log.passed_queries = index+1; console.log(res); })
+    	() => currentValue().then((res) => { console.log(res); })
     )
   }, 
 
