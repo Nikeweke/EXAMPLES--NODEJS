@@ -148,5 +148,5 @@ const promisesResult = promises.reduce(
 );
 
 promisesResult.then(() => console.log("All done"))
-.catch((err) => { log.err = err.name || err; console.log('Error -', log) })
+.catch((err) => {  console.log('Error -', log) })
 ```
