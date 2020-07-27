@@ -8,9 +8,11 @@
     "oop:dev": "ts-node-dev --respawn   ./oop/app.ts",
     "expressjs:dev": "ts-node-dev --respawn  ./expressjs/app.ts",
     "decorators:dev": "tsc ./decorators/class-decorator.ts -w --experimentalDecorators",
+    "generics:dev": "ts-node-dev --respawn  ./generics/app.ts",
     "oop:prod": "tsc && node ./build/oop/app.js",
     "expressjs:prod": "tsc && node ./build/expressjs/app.js",
-    "decorators:prod": "tsc && node ./build/decorators/app.js"
+    "decorators:prod": "tsc && node ./build/decorators/app.js",
+    "generics:prod": "tsc && node ./build/generics/app.js"
   },
   "author": "",
   "license": "ISC",
