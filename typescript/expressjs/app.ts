@@ -1,20 +1,4 @@
 
-// Example of Importing classes and using them
-import {Animal, Cat, Dog} from './app/second'
-
-let cat = new Cat('Matroskin')
-let dog = new Dog('Sharik')
-
-// tied by one interface
-function animalTalker(animal: Animal) {
-  animal.talk()
-}
-
-animalTalker(cat)
-animalTalker(dog)
-
-
-
 // Express example
 import express = require('express');
 

@@ -1,6 +1,6 @@
 
 export interface Animal {
-  talk(): string
+  talk(): void
 }
 
 export class Cat implements Animal {
@@ -11,8 +11,8 @@ export class Cat implements Animal {
     this.name = name
   }
 
-  talk(): string {
-    return this.name + ' says - Mew'
+  talk(): void {
+    console.log(this.name + ' says - Mew')
   }
 }
 
@@ -24,8 +24,8 @@ export class Dog implements Animal {
     this.name = name
   }
 
-  talk(): string {
-    return this.name + ' says - Gaw'
+  talk(): void {
+    console.log(this.name + ' says - Gaw')
   }
 }
 
