@@ -4,15 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "tsc": "tsc",
-    "oop:dev": "ts-node-dev --respawn   ./oop/app.ts",
-    "expressjs:dev": "ts-node-dev --respawn  ./expressjs/app.ts",
-    "decorators:dev": "tsc ./decorators/class-decorator.ts -w --experimentalDecorators",
-    "generics:dev": "ts-node-dev --respawn  ./generics/app.ts",
-    "oop:prod": "tsc && node ./build/oop/app.js",
-    "expressjs:prod": "tsc && node ./build/expressjs/app.js",
-    "decorators:prod": "tsc && node ./build/decorators/app.js",
-    "generics:prod": "tsc && node ./build/generics/app.js"
+    "oop:dev": "ts-node-dev --respawn   ./src/oop/app.ts",
+    "expressjs:dev": "ts-node-dev --respawn  ./src/expressjs/app.ts",
+    "decorators:dev": "tsc ./src/decorators/app.ts -w --experimentalDecorators",
+    "generics:dev": "ts-node-dev --respawn  ./src/generics/app.ts",
+    "ns:dev": "ts-node-dev --respawn  ./src/namespaces/app.ts",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",

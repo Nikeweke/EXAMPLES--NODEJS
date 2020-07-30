@@ -3,7 +3,7 @@
 * [Typescript-with-node-and-express-js-why-when-and-how](https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d)
 * [TutorialPoint](https://www.tutorialspoint.com/typescript/typescript_tuples.htm)
 * [Typescript - Data types](https://metanit.com/web/typescript/2.5.php)
-* [Typescript - Decorators](https://metanit.com/web/typescript/6.1.php)
+* [Typescript - Decorators](https://www.youtube.com/watch?v=7NU6K4170As)
 
 ### Quick start
 ```sh

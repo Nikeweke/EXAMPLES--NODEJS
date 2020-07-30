@@ -1,10 +1,11 @@
 // Декоратор sealed с помощью функции Object.seal запрещает расширение прототипа класса User.
-function sealed(constructor: Function) {
+function Sealed(constructor: Function) {
   console.log("sealed decorator");
   Object.seal(constructor);
   Object.seal(constructor.prototype);
 }
 
+@Sealed
 class User {
   name: string;
   constructor(name: string){
@@ -19,8 +20,6 @@ class User {
 Object.defineProperty(User, 'age', {
   value: 17
 });
-
-
 
 
 // =======================================================> Second example
@@ -40,7 +39,7 @@ function logger<TFunction extends Function>(target: TFunction): TFunction{
 }
 
 @logger
-class User {
+class User2 {
   name: string;
   constructor(name: string){
       this.name = name;
@@ -49,7 +48,7 @@ class User {
       console.log(this.name);
   }
 }
-let tom = new User("Tom");
-let bob = new User("Bob");
+let tom = new User2("Tom");
+let bob = new User2("Bob");
 tom.print();
 bob.print();
