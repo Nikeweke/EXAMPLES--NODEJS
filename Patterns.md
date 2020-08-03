@@ -32,8 +32,6 @@ Subject.prototype = {
 }
 
 const subject = new Subject()
-
-
 function Observer(index = 0) {
   console.log('Observer ', index)
 }
