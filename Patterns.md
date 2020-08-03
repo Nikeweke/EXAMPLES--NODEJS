@@ -1,6 +1,7 @@
 # Patterns
 
 ### Observer 
+https://www.youtube.com/watch?v=45TeJEmcqk8&list=PLREW9ZuU80uTfmxo61-acnUYk3P_4plIF&index=7
 ```js
 // Function-class
 function Subject (name, size) {
