@@ -20,7 +20,7 @@
 
 ### Создание класса
 ```js
-// Function-class
+// ES5 
 function Animal (name, size) {
   // нет явного конструктора,
   // используем переданные параметры функции
@@ -29,14 +29,21 @@ function Animal (name, size) {
   this.name = name || ''
   this.size = size || ''
   
-  // методы
+  // метод (так больше памяти выделяеться)
   this.sayHello = function () {
     console.log(`${this.name} (${this.size}) says hello`)
   }
 }
 
+// метод (так меньше памяти выделяеться)
+Animal.prototype.sayHello2 = function() {
+  console.log('i am here', this.name)
+}
+
 const anim = new Animal('cow', 'big')
 anim.sayHello()
+anim.sayHello2()
+
 ```
 
 ```js
