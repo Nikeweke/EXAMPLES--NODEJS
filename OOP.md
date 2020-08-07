@@ -36,31 +36,34 @@ class User {
 ```
 
 ### Наследование 
+###### ES5 
 ```js
-// ES5 
-function Animal () {
-  this.hello = function() {
-    console.log('Hello from animal')
-  }
+function Animal(name) {
+  this.name = name
+}
+Animal.prototype.voice = function () {
+  console.log('Hello from - ', this.name)
 }
 
-Animal.prototype.hello2 = function () {
-    console.log('Hello 2 from animal')
+function Dog(name, color) {
+  // Call constructor of superclass to initialize superclass-derived members.
+  Animal.call(this, name) 
+  this.color = color
+}
+// Dog extends Animal
+Dog.prototype = Object.create(Animal.prototype) 
+Dog.prototype.constructor = Dog;
+// Only Dog-class method
+Dog.prototype.getColor = function() {
+  console.log('Dog is ' + this.color +  ' color')
 }
 
-function Dog () {
-// Dog extends Animal that created inside
-  Animal.call(this)
-}
-// Dog extends Animal that created on prototype
-Dog.prototype = Object.create(Animal.prototype)
+let animal = new Animal('wolf')
+let dog = new Dog('dog', 'red')
 
-let anim = new Animal()
-let dog = new Dog()
-
-anim.hello()
-dog.hello()
-dog.hello2()
+animal.voice()
+dog.voice()
+dog.getColor()
 ```
 
 ```js
