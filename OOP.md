@@ -10,7 +10,7 @@
 
 --- 
 
-### ES5 vs ES6 classes difference
+### ES5 vs ES6 отличие классов
 - class keyword
 - constructor function syntax
 - getter/setter syntax
