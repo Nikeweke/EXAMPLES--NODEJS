@@ -47,8 +47,7 @@ Animal.prototype.voice = function () {
 }
 
 function Dog(color) {
-  // Call constructor of superclass to initialize superclass-derived members.
-  Animal.call(this, 'dog') 
+  Animal.call(this, 'dog') // Вызов родительского конструктора 
   this.color = color
 }
 // Dog extends Animal
@@ -80,7 +79,7 @@ class Animal  {
 
 class Dog extends Animal {
   constructor(color) {
-    super('dog')
+    super('dog') // Вызов родительского конструктора
     this.color = color
   }
   getColor() {
