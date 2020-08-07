@@ -5,7 +5,7 @@
 * ES5 vs ES6 отличие классов
 * Создание класса
 * Наследование
-* Private and public fields
+* static, getter, setter
 
 --- 
 
