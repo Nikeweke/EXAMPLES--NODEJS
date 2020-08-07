@@ -34,6 +34,7 @@ class User {
   }
 }
 ```
+<br>
 
 ### Наследование - `class`, `extends`, `super` 
 ###### ES5 
@@ -94,6 +95,7 @@ animal.voice()
 dog.voice()
 dog.getColor()
 ```
+<br>
 
 ### `static`, `getter`, `setter`
 ###### ES5
