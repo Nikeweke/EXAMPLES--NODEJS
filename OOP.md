@@ -45,9 +45,9 @@ Animal.prototype.voice = function () {
   console.log('Hello from - ', this.name)
 }
 
-function Dog(name, color) {
+function Dog(color) {
   // Call constructor of superclass to initialize superclass-derived members.
-  Animal.call(this, name) 
+  Animal.call(this, 'dog') 
   this.color = color
 }
 // Dog extends Animal
@@ -66,25 +66,32 @@ dog.voice()
 dog.getColor()
 ```
 
+###### ES6
 ```js
-// ES6 
 class Animal  {
-  hello () {
-    console.log('Hello from animal')
+  constructor(name) {
+    this.name = name
+  }
+  voice() {
+    console.log('Hello from - ', this.name)
   }
 }
 
-Animal.prototype.hello2 = function () {
-    console.log('Hello 2 from animal')
+class Dog extends Animal {
+  constructor(color) {
+    super('dog')
+    this.color = color
+  }
+  getColor() {
+    console.log('Dog is ' + this.color +  ' color')
+  }
 }
 
-// Dog extends Animal that created inside
-class Dog extends Animal {}
 
-let anim = new Animal()
-let dog = new Dog()
+let animal = new Animal('wolf')
+let dog = new Dog('red')
 
-anim.hello()
-dog.hello()
-dog.hello2()
+animal.voice()
+dog.voice()
+dog.getColor()
 ```
