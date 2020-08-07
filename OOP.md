@@ -6,17 +6,16 @@
 * Создание класса
 * Наследование
 * Private and public fields
-* Вызов родительского конструктора
 
 --- 
 
 ### ES5 vs ES6 отличие классов
 - class keyword
 - constructor function syntax
-- getter/setter syntax
 - extends keyword
 - super keyword
 - static keyword
+- getter/setter syntax
 
 ### Создание класса - `class`, `constructor`
 ###### ES5 (function-constructor) 
@@ -94,4 +93,45 @@ let dog = new Dog('red')
 animal.voice()
 dog.voice()
 dog.getColor()
+```
+
+### static, getter, setter
+###### ES5
+```js
+function User() {}
+ // static method
+User.someInfo = function() {
+   console.log('i am static method')
+ }
+```
+
+###### ES6
+```js
+class User {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  static info() {
+    console.log('i am static method')
+  }
+
+  get ageWithName() {
+    return `${this.name} (${this.age})`
+  }
+
+  set ageAndName({ age, name }) {
+    this.age = age
+    this.name = name
+  }
+}
+
+const user = new User('Axelrod', 25)
+console.log(user.ageWithName)
+
+user.ageAndName = { age: 23, name: 'Baker'}
+console.log(user.ageWithName)
+
+User.info()
 ```
