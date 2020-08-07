@@ -18,7 +18,7 @@
 - super keyword
 - static keyword
 
-### Создание класса (`class`, `constructor`)
+### Создание класса - `class`, `constructor`
 ###### ES5 (function-constructor) 
 ```js
 function User(name) {
@@ -36,7 +36,7 @@ class User {
 }
 ```
 
-### Наследование (`class`, `extends`, `super`) 
+### Наследование - `class`, `extends`, `super` 
 ###### ES5 
 ```js
 function Animal(name) {
