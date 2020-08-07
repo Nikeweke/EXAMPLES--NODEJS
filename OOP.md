@@ -12,10 +12,13 @@
 
 
 ### ES6 Classes features
-* constructor
-* static methods
-* setters/getters
-* extends
+- class keyword
+- getter/setter syntax
+- constructor function syntax
+- extends keyword
+- super keyword
+- static keyword
+
 
 
 ### Создание класса
