@@ -95,7 +95,7 @@ dog.voice()
 dog.getColor()
 ```
 
-### static, getter, setter
+### `static`, `getter`, `setter`
 ###### ES5
 ```js
 function User() {}
