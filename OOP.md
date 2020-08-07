@@ -1,8 +1,8 @@
-# JS - OOP 
-#### ES6 vs Prototypes
+# JS - OOP (ES6 vs ES5 classes)
+
 
 Содержание
-* ES6 Classes features
+* ES5 vs ES6 classes difference
 * Создание класса
 * Private and public fields
 * Наследование 
@@ -10,88 +10,30 @@
 
 --- 
 
-
-### ES6 Classes features
+### ES5 vs ES6 classes difference
 - class keyword
-- getter/setter syntax
 - constructor function syntax
+- getter/setter syntax
 - extends keyword
 - super keyword
 - static keyword
 
-
-
 ### Создание класса
 ```js
-// ES5 
-function Animal (name, size) {
-  // нет явного конструктора,
-  // используем переданные параметры функции
-  
-  // поля (свойства)
+// ES5 (function-constructor)
+function User(name) {
   this.name = name || ''
-  this.size = size || ''
-  
-  // метод (так больше памяти выделяеться)
-  this.sayHello = function () {
-    console.log(`${this.name} (${this.size}) says hello`)
-  }
-}
-
-// метод (так меньше памяти выделяеться)
-Animal.prototype.sayHello2 = function() {
-  console.log('i am here', this.name)
-}
-
-const anim = new Animal('cow', 'big')
-anim.sayHello()
-anim.sayHello2()
-
-```
-
-```js
-// ES6 class
-class Animal {
-  constructor (name, size) {
-	// поля (свойства)
-	this.name = name || ''
-    this.size = size || ''
-  }
-  
-  // методы
-  sayHello() {
-    console.log(`${this.name} (${this.size}) says hello`)
-  }
-}
-
-const anim = new Animal('cow', 'big')
-anim.sayHello()
-```
-
-### Private and public fields
-```js
-// ES5 - Function-class
-function Animal () {
-  var private_var = 'i am private here'
-  
-  // using closure here
-  this.setPrivateVar = function(value) { private_var = value }
-  this.getPrivateVar = function() { return private_var }
 }
 ```
 
 ```js
 // ES6 class
-class Animal {
-   constructor() {
-    var private_var = 'i am private here'
-    // using closure here
-    this.setPrivateVar = function(value) { private_var = value }
-    this.getPrivateVar = function() { return private_var }
+class User {
+  constructor(name) {
+    this.name = name || ''
   }
 }
 ```
-
 
 ### Наследование 
 ```js
@@ -142,21 +84,4 @@ let dog = new Dog()
 anim.hello()
 dog.hello()
 dog.hello2()
-```
-
-### Вызов родительского конструктора
-```js
-// Function-class
-function Cat () {
-  Animal.call(this) 
-}
-```
-
-```js
-// ES6 class
-class Cat extends Animal {
-  constructor() {
-    super()
-  }
-}
 ```
