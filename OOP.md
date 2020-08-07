@@ -18,7 +18,7 @@
 - super keyword
 - static keyword
 
-### Создание класса
+### Создание класса (class, constructor)
 ```js
 // ES5 (function-constructor)
 function User(name) {
