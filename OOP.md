@@ -4,8 +4,8 @@
 Содержание
 * ES5 vs ES6 classes difference
 * Создание класса
+* Наследование
 * Private and public fields
-* Наследование 
 * Вызов родительского конструктора
 
 --- 
