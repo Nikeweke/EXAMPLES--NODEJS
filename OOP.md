@@ -1,4 +1,4 @@
-# JS - OOP (ES6 vs ES5 classes)
+# JS - OOP (ES5 vs ES6 classes)
 
 
 Содержание
