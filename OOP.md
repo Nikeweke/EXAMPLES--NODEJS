@@ -2,9 +2,9 @@
 
 
 Содержание
-* ES5 vs ES6 classes difference
-* Создание класса
-* Наследование
+* ES5 vs ES6 отличие классов
+* Создание класса (`class`, `constructor`)
+* Наследование (`class`, `extends`, `super`)
 * Private and public fields
 * Вызов родительского конструктора
 
@@ -18,14 +18,15 @@
 - super keyword
 - static keyword
 
-### Создание класса (class, constructor)
+### Создание класса (`class`, `constructor`)
+###### ES5 (function-constructor) 
 ```js
-// ES5 (function-constructor)
 function User(name) {
   this.name = name || ''
 }
 ```
 
+###### ES6 
 ```js
 // ES6 class
 class User {
@@ -35,7 +36,7 @@ class User {
 }
 ```
 
-### Наследование 
+### Наследование (`class`, `extends`, `super`) 
 ###### ES5 
 ```js
 function Animal(name) {
