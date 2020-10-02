@@ -93,9 +93,10 @@ axios
 },
 ```
 
-Пользователи имеют `role`, могут иметь одну роль
+Пользователи имеют `role`, могут иметь одну роль (Public, Authenticated - by default)
 ```js
  async someMethod(ctx) {
     const { user } = ctx.state
     console.log(user.role) // Object{} 
+    console.log(user.role.type) // "public" 
 ```
