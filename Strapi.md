@@ -79,6 +79,15 @@ axios
  async someMethod(ctx) {
     const { user } = ctx.state
     console.log(user.roles) // [ {}, {}, {} ] - can have many roles
+    console.log(isSuperAdmin(user))
+ }
+ 
+ // helper
+ isSuperAdmin(user) {
+  if (!('roles' in user)) return false
+  const roleCodes = user.roles.map((item) => item.code)
+  return roleCodes.includes('strapi-super-admin')
+},
 ```
 
 Пользователи имеют `role`, могут иметь одну роль
