@@ -66,3 +66,24 @@ axios
 
 ### Relational fields
 Создавая записи для таблиц можно указать поля(отношения) по которым можно подвязать с другой таблицы - Поле "relation" указывает на соеденение с другой таблицой. При отдаче данных по API привязанные данные будут в записи.
+
+### Admins and Users
+* Только админы могут войти в админку
+* Админы храняться в таблице - **strapi_administrator** 
+* Роли для админов храняться в таблице - **strapi_role** 
+* Пользователи храняться в таблице - **users-permission_user** 
+* Роли для пользователей храняться в таблице - **users-permission_role** 
+
+Админы имеют `roles`, могут иметь несколько ролей. (SuperAdmin, Editor, Author - by default)
+```js
+ async someMethod(ctx) {
+    const { user } = ctx.state
+    console.log(user.roles) // [ {}, {}, {} ] - can have many roles
+```
+
+Пользователи имеют `role`, могут иметь одну роль
+```js
+ async someMethod(ctx) {
+    const { user } = ctx.state
+    console.log(user.role) // Object{} 
+```
