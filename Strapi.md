@@ -61,6 +61,7 @@ axios
 
 ### Extensions for plugin
 > https://strapi.io/documentation/v3.x/plugins/users-permissions.html#adding-a-new-provider-to-your-project
+
 Можно переписывать стандартную логику плагинов. Для этого надо копировать файлы из node_modules. И потом можно менять. 
 
 
