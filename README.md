@@ -26,7 +26,7 @@ node app
 * Koa.js - 17.700 stars
 * Keystone.js - 11.100 stars
 
-### Bcrypt, node-sass install faild solution
+### Bcrypt, node-sass install fail solution
 
 ###### 1 option 
 
