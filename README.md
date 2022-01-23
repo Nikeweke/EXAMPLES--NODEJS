@@ -3,8 +3,8 @@
 #### Содержание 
 
 * Quick start
-* [Туториал](https://www.youtube.com/watch?v=U57kU311-nE&index=9&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp) 
 * Top of Node Frameworks 
+* Bcrypt, node-sass install faild solution
 * Вопросы и ответы, решение пробелем
 
 ---
@@ -25,6 +25,24 @@ node app
 * Sails.js - 17.800 stars
 * Koa.js - 17.700 stars
 * Keystone.js - 11.100 stars
+
+### Bcrypt, node-sass install faild solution
+
+###### 1 option 
+
+> source: https://stackoverflow.com/questions/46515077/unable-to-install-node-sass-in-my-project
+
+```sh
+npm uninstall node-sass
+rm package-lock.json
+npm cache clean --force
+npm update 
+npm i
+```
+
+###### 2 option
+* change `bcrypt` to `bcryptjs` (its dep without need to build, but slower)
+* change `node-sass` to `sass(dart-sass)` (its dep without need to build, but slower)
 
 ### Вопросы и ответы, решение проблем
 * В функциях которые `async` не ловяться ошибки, как их словить ?
