@@ -28,6 +28,8 @@ node app
 
 ### Bcrypt, node-sass install fail solution
 
+First of all python 2-version must be installed
+
 ###### 1 option 
 
 > source: https://stackoverflow.com/questions/46515077/unable-to-install-node-sass-in-my-project
