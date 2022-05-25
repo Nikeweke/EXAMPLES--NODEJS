@@ -4,9 +4,10 @@
 * Class
 * Interface
 * Abstract class
-* Mixin
 * Enums
 * Types
+* Generics vs Any
+* Mixin
 
 
 ---
@@ -153,6 +154,28 @@ const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 ```
 <br />
 
-### Mixin
+
+
+### Generics vs Any
+
+> no difference only but typing and hints
+
+```ts
+function identity(arg: any): any {
+  return arg;
+}
+
+function identity<Type>(arg: Type): Type {
+  return arg;
+}
+
+function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
+  console.log(arg.length); // Array has a .length, so no more error
+  return arg;
+}
+```
+
 <br />
 
+### Mixin
+<br />
