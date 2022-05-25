@@ -1,13 +1,13 @@
 # Typescript 
 
-* Init project
-* Class
-* Interface
-* Abstract class
-* Enums
-* Types
-* Generics vs Any
-* Mixin
+* [Init project](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#init-project)
+* [Class](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#class)
+* [Interface](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#interface)
+* [Abstract class](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#abstract-class)
+* [Enums](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#enums)
+* [Types](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#types)
+* [Generics vs Any](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#generics-vs-any)
+* [Mixin](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#mixin)
 
 
 ---
