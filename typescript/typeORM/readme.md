@@ -9,7 +9,6 @@
 * [Generics vs Any](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#generics-vs-any)
 * [Mixin](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#mixin)
 
-
 ---
 
 
