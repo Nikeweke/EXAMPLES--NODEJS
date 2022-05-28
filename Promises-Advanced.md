@@ -11,6 +11,7 @@
 * Make delay to continue
 * Insert a few records with check of previous
 * Make a chain with promises (waterfall)
+* `Promise.all` vs `Promise.allSettled`
 
 ---
 
@@ -149,4 +150,57 @@ const promisesResult = promises.reduce(
 
 promisesResult.then(() => console.log("All done"))
 .catch((err) => {  console.log('Error -', log) })
+```
+
+### `Promise.all` vs `Promise.allSettled`  
+
+```js
+const promises = [
+	Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.reject('error'),
+  Promise.resolve(-100)
+];
+```
+
+###### Promise.all() 
+```js
+(async function() {
+  try {
+    await Promise.all(promises).then(
+      (results) => console.log(results)
+    )
+  } catch(err) {
+    console.log('ERROR:', err) // will get here 
+  }
+})()
+```
+
+###### Promise.allSettled()
+```js
+(async function() {
+  try {
+    await Promise.allSettled(promises).then(
+      (results) => console.log(results)
+    )
+  } catch(err) {
+		console.log('ERROR:', err)
+	}
+})()
+
+// Output
+/* [{ 
+  status: "fulfilled",
+  value: 1
+}, {
+  status: "fulfilled",
+  value: 2
+}, {
+  reason: "error",
+  status: "rejected"
+}, {
+  status: "fulfilled",
+  value: -100
+}] */
+
 ```
