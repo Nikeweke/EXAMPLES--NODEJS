@@ -28,8 +28,8 @@ app.listen(3000);
 ```javascript
 // отправит обычный текст
 app.get('/',         function(req, res){ res.end('sss'); })
-app.get('/shit/',    function(req, res){ res.end('sss1'); })
-app.get('/shit/:id', function(req, res){ res.end('ID->' + req.params.id); })
+app.get('/item/',    function(req, res){ res.end('sss1'); })
+app.get('/item/:id', function(req, res){ res.end('ID->' + req.params.id); })
 
 // отправить страницу
 app.get('/',      function(req, res){ res.sendFile(__dirname + '/index.html'); })

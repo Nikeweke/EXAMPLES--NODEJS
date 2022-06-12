@@ -3,7 +3,6 @@
 #### Содержание 
 
 * Quick start
-* Top of Node Frameworks 
 * Bcrypt, node-sass install faild solution
 * Вопросы и ответы, решение пробелем
 
@@ -19,12 +18,6 @@ console.log('Hello world')
 node app
 ```
 
-### Top of Node frameworks:
-* Meteor.js - 38.400 stars
-* Express.js - 34.000 stars
-* Sails.js - 17.800 stars
-* Koa.js - 17.700 stars
-* Keystone.js - 11.100 stars
 
 ### Bcrypt, node-sass install fail solution
 
