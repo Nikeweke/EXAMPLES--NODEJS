@@ -82,7 +82,7 @@ async function main() {
 ### Queue (JetStream) *(beta)*
 
 ```sh
-# enable jetstream (queues)
+# enable jetstream (queues) ()
 > nats-server.exe -js 
 ```
 
@@ -198,7 +198,7 @@ async function main() {
   //   console.log(si);
   // });
 
-  // add a stream
+  // specifying a stream name
   const stream = "mystream";
 
   // list all consumers for a stream:
@@ -208,6 +208,7 @@ async function main() {
   });
 
   // add a new durable pull consumer
+  // https://docs.nats.io/nats-concepts/jetstream/consumers#deliverpolicy-optstartseq-optstarttime
   const durableName = 'me'
   await jsm.consumers.add(stream, {
     durable_name: durableName,
