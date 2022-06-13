@@ -77,22 +77,20 @@ async function main() {
   }
 }
 ```
+<br />
 
 ### Queue (JetStream) *(beta)*
 
-> Start nats.exe with flag `-js` to enable JetStream: `nats.exe -js`. [More about jetstream](https://docs.nats.io/using-nats/developer/develop_jetstream)
+```sh
+# enable jetstream (queues)
+> nats-server.exe -js 
+```
+
+> [More about jetstream](https://docs.nats.io/using-nats/developer/develop_jetstream)
 
 ###### 1. create stream and push messages into queue (stream)
 
 ```js
-// start nats with: nats-server.exe -js 
-
-/*
-  * adding stream(queue) with wildcard subject(topic)
-  * push into queue
-  * get messages without deletion
-*/
-
 
 const nats = require('nats')
 const { RetentionPolicy, StorageType } = nats
