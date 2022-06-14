@@ -40,6 +40,9 @@ npm install -g typescript
 # init tsconfig.json
 tsc --init
 
+# run typesciprt code with tsconfig.json
+tsc 
+
 # compile app with tsconfig.json setup in js
 tsc app.ts
 
