@@ -15,21 +15,28 @@
 
 ### Init project
 
+###### scripts for package.json
+```json
+"init-tsconfig": "tsc --init"
+"build": "tsc", // build using tsconfig.json
+"dev": "ts-node ./src/app.ts", // run with ts-node watcher
+
+// in tsconfig.json where you can specify src(rootDir), output(outDir) folder, etc.
+```
+
+###### deps 
 ```sh
 npm init -y
 
-# globally install ts
+# OR Locally install in project 
+npm install -D typescript ts-node
+
+# OR Globally install ts
 npm install -g typescript
+```
 
-# OR install in project 
-npm install -S typescript
-npm install -D ts-node # run ts instatly
-
-# run below command thru package.json > "scripts" section if locally installed
-# "create-tsconfig": "tsc --init",
-# "app": "tsc app.ts",
-# "app-no-tsconfig": "tsc app.ts -w"
-
+###### tsc commands
+```sh
 # init tsconfig.json
 tsc --init
 
@@ -41,7 +48,6 @@ tsc app.ts -w
 
 # enable experimental decorators in js
 tsc app.ts -t ES5 --experimentalDecorators
-
 ```
 <br />
 
