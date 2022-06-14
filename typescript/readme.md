@@ -15,15 +15,6 @@
 
 ### Init project
 
-###### scripts for package.json
-```js
-"init-tsconfig": "tsc --init"
-"build": "tsc", // build using tsconfig.json
-"dev": "ts-node ./src/app.ts", // run with ts-node watcher
-
-// in tsconfig.json you can specify src(rootDir), output(outDir) folder, etc.
-```
-
 ###### deps 
 ```sh
 npm init -y
@@ -33,6 +24,15 @@ npm install -D typescript ts-node
 
 # OR Globally install ts
 npm install -g typescript ts-node
+```
+
+###### scripts for package.json
+```js
+"init-tsconfig": "tsc --init"
+"build": "tsc", // build using tsconfig.json
+"dev": "ts-node ./src/app.ts", // run with ts-node watcher
+
+// in tsconfig.json you can specify src(rootDir), output(outDir) folder, etc.
 ```
 
 ###### tsc commands
