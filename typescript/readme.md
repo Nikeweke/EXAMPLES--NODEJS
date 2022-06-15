@@ -1,5 +1,7 @@
 # Typescript 
 
+> [Tutorial-docs](https://www.tutorialsteacher.com/typescript/type-annotation)
+
 * [Init project](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#init-project)
 * [Type vs interface](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#type-vs-interface)
 * [Class](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#class)
@@ -8,7 +10,7 @@
 * [Enums](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#enums)
 * [Types](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#types)
 * [Generics vs Any](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#generics-vs-any)
-* [Mixin](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#ts-to-js-compile-result)
+* [TS to JS compile result](https://github.com/Nikeweke/EXAMPLES--NODEJS/tree/master/typescript#ts-to-js-compile-result)
 
 
 ---
@@ -268,15 +270,27 @@ type MyType = {   // will not compile
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class MyClass {
-  constructor() {
-    this.name = '';
-  }
+	constructor() {
+		this.name = '';
+	}
 }
 class MyAbsClass {
-  constructor() {
-    this.name = '';
-  }
+	constructor() {
+		this.name = '';
+	}
 }
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 0] = "Up";
+    Direction[Direction["Down"] = 1] = "Down";
+    Direction[Direction["Left"] = 2] = "Left";
+    Direction[Direction["Right"] = 3] = "Right";
+})(Direction || (Direction = {}));
+// tuple
+const employee = [1, "Steve"];
+// array
+const arr = Array(1, 2, 3);
+
 ```
 
 
