@@ -1,6 +1,7 @@
 # Typescript 
 
 * [Init project](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#init-project)
+* [Type vs interface](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#type-vs-interface)
 * [Class](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#class)
 * [Interface](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#interface)
 * [Abstract class](https://github.com/Nikeweke/EXAMPLES--NODEJS/blob/master/Typescript.md#abstract-class)
@@ -53,6 +54,64 @@ tsc app.ts -w
 tsc app.ts -t ES5 --experimentalDecorators
 ```
 <br />
+
+### Types vs Interface vs Class
+
+* Interface - use for contracts, type-checking, common data type declaration
+* Types - are the same to Interface, but Type can't be modified after initilization
+* Class - use when you need instance
+
+###### Extending interface and type
+
+```ts 
+// extending interface 
+interface Animal {
+  name: string
+}
+interface Bear extends Animal {
+  honey: boolean
+}
+
+const bear = getBear() 
+bear.name
+bear.honey
+
+
+// extending types via intersection
+type Animal = {
+  name: string
+}
+type Bear = Animal & { 
+  honey: boolean 
+}
+
+const bear = getBear();
+bear.name;
+bear.honey;
+```
+
+###### Extending with new field
+
+```ts
+// adding new fields to existing interface
+interface Window {
+  title: string
+}
+interface Window {
+  ts: TypeScriptAPI
+}
+
+// A type cannot be changed after being created
+type Window = {
+  title: string
+}
+type Window = {
+  ts: TypeScriptAPI
+}
+// Error: Duplicate identifier 'Window'
+```
+
+
 
 ### Class 
 
