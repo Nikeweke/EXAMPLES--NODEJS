@@ -262,6 +262,10 @@ interface MyInterface { // will not compile
 type MyType = {   // will not compile
   name: string
 }
+// tuple
+const employee: [number, string] = [1, "Steve"];
+// array
+const arr = Array<Number>(1, 2, 3)
 ```
 
 ###### result in js
