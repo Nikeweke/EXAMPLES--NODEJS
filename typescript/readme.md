@@ -23,7 +23,8 @@
 npm init -y
 
 # OR Locally install in project 
-npm install -D typescript ts-node
+# "@types/node" type definition for built-in modules of nodejs
+npm install -D typescript ts-node @types/node
 
 # OR Globally install ts
 npm install -g typescript ts-node
