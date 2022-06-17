@@ -113,7 +113,7 @@ type Window = {
 }
 // Error: Duplicate identifier 'Window'
 ```
-
+<br />
 
 
 ### Class 
@@ -245,8 +245,8 @@ function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
   return arg;
 }
 ```
-
 <br />
+
 
 ### TS to js compile result
 
