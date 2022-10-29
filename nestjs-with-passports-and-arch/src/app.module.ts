@@ -1,26 +1,18 @@
 import { Module } from '@nestjs/common';
-import { RedisModule } from 'nestjs-redis';
+import { RedisModule } from '@liaoliaots/nestjs-redis';
 
-import { AppController } from './components/app/app.controller';
-import { AppService } from './components/app/app.service';
-import { AuthModule } from '@components/auth/auth.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { AuthModule } from '@src/auth/auth.module';
 
 @Module({
   imports: [
     AuthModule,
-    RedisModule.register({
-      url: process.env.REDIS_URI as string,
-      onClientReady: async (client): Promise<void> => {
-        client.on('error', err => console.error(err));
-        client.on('ready', () =>
-          console.log('Redis is running on 6379 port'),
-        );
-        client.on('restart', () =>
-          console.warn('attempt to restart the redis server'),
-        );
-      },
-      // reconnectOnError: (): boolean => true,
-    }),
+    RedisModule.forRoot({
+      config: {
+        url: process.env.REDIS_URI as string,
+      }
+    })
   ],
   controllers: [AppController],
   providers: [AppService],
