@@ -1,12 +1,12 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
 import { RealIP } from 'nestjs-real-ip';
 import * as Redis from 'ioredis';
-import { RedisService } from 'nestjs-redis';
+import { RedisService } from '@liaoliaots/nestjs-redis';
 
 import { AppService } from './app.service';
 import { rateLimit } from '@utils/rate-limit';
-// guards
-import { JwtAuthGuard } from '@components/auth/guards/_index'
+// decorators
+import Private from './decorators/private.decorator';
 
 
 @Controller()
@@ -31,8 +31,7 @@ export class AppController {
     return this.appService.publicRouteHandler();
   }
 
-  @Get("/private")
-  @UseGuards(JwtAuthGuard)
+  @Private("/private")
   async privateRoute(@Req() req): Promise<string> {
     await rateLimit({
       redisClient: this.redisClient, 

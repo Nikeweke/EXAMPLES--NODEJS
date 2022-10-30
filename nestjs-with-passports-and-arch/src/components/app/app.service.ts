@@ -1,13 +1,8 @@
 import { Injectable } from '@nestjs/common';
-
+import { publicRouteHandler, privateRouteHandler} from './use-cases/_index'
 
 @Injectable()
 export class AppService {
-  publicRouteHandler(): string {
-    return 'Public response'
-  }
-  
-  privateRouteHandler(): string {
-    return 'Private response!';
-  }
+  publicRouteHandler = publicRouteHandler
+  privateRouteHandler = privateRouteHandler
 }
