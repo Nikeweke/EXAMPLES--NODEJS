@@ -59,6 +59,10 @@ npm install --save-dev jest @types/jest supertest
 jest.mock('signature-validator');
 
 describe('Express Server', () => {
+   beforeEach(() => {
+      jest.restoreAllMocks();
+    });
+
   it('testing some function', () => {
     // ....
     const signatureValidator = require('signature-validator');
