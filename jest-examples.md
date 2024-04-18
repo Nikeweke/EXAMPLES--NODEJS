@@ -48,6 +48,12 @@ npm install --save-dev jest @types/jest supertest
 
 ---
 
+* Mock behaviour 1 function from package
+* `toHaveBeenNthCalledWith`
+
+<br />
+
+
 ### Mock behaviour 1 function from package
 
 ```ts
@@ -76,4 +82,29 @@ describe('Express Server', () => {
     // and we mocking behaviour above
   })
 })
+```
+<br />
+
+### `toHaveBeenNthCalledWith` 
+
+> specified function must be called with given args on specific time call 
+
+###### app.ts
+```ts
+function main () {
+  console.info(1)
+  console.info(2)
+  console.info({ test: 'ok' })
+  console.info(4)
+}
+ ```
+
+###### app.test.ts
+```ts
+it('passed testing argument to "toHaveBeenNthCalledWith" must match console.info argument passed on 3 time of call', async () => {
+  expect(console.info).toHaveBeenNthCalledWith(4, {
+     test: 'ok'
+   });
+})
+
 ```
