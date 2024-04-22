@@ -1,60 +1,15 @@
 # Jest Examples
 
-### How to use it?
-
-1. Add as dep library
-
-```sh
-# jest - libary for testing
-# @types/jest - support for typescript
-# supertest - for testing application end-to-end tests
-npm install --save-dev jest @types/jest supertest
-```
-
-2. Add test for function with name "[name-file].spec.ts"
-
-3. Add command to scripts section of package.json
-
-```
- "scripts": {
-    "test": "jest"
-  },
-```
-
-4. run it with `npm run test`
-
-### Cases to test 
-
-1. Function with result 
-  1.1. Mocking the packages 3-party
-  1.2. Mocking DB requests
-
-2. Route with requests to DB (requires supertest)
-  2.1 Mocking the DB responses
-  2.2. Mocking the answer for route
-  2.3. Mocking packages 3-party
-
-3. End-to-end test 
-  - create an app
-  - make request to route
-  - prepare data for requesting route
-  - write expectation
-
-4. Using `__mocks__` - default mocking of package  
-
-5. Creating mocks and testResources
-
-6. Environment Variables - .env.test
-
----
-
+### Content
 * Mock behaviour 1 function from package
-* `toHaveBeenNthCalledWith`
+* toHaveBeenNthCalledWith
+* When different repos calling a few times
+
 
 <br />
 
 
-### Mock behaviour 1 function from package
+#### Mock behaviour 1 function from package
 
 ```ts
 // expressServer.test.ts
@@ -85,7 +40,7 @@ describe('Express Server', () => {
 ```
 <br />
 
-### `toHaveBeenNthCalledWith` 
+#### toHaveBeenNthCalledWith
 
 > specified function must be called with given args on specific time call 
 
@@ -107,4 +62,32 @@ it('passed testing argument to "toHaveBeenNthCalledWith" must match console.info
    });
 })
 
+```
+<br />
+
+#### When different repos calling a few times
+
+```ts
+// app.ts
+const repo = ormManager.getRepository(PaymentEntity)
+```
+
+```ts
+// app.test.ts
+const mockedPaymentRepository = {} // methods
+const mockedEventRepository = {} // methods
+const mockedUserPaymentRepository = {} // methods
+
+jest.spyOn(mockOrmManager, 'getRepository').mockImplementation((repoType) => {
+  if (repoType.name === PaymentRepository.name) {
+    return mockedPaymentRepository;
+  }
+  if (repoType.name === EventRepository.name) {
+    return mockedEventRepository;
+  }
+  if (repoType.name === UserPaymentRepository.name) {
+    return mockedUserPaymentRepository;
+  }
+  throw new Error(`Unexepected repo type requested: ${repoType.name}`);
+});
 ```
