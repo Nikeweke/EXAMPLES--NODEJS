@@ -1,10 +1,12 @@
 # Jest Examples
 
 ### Content
-* Mock behaviour 1 function from package
-* toHaveBeenNthCalledWith
-* When different repos calling a few times
-
+* [Mock behaviour 1 function from package](#mock-behaviour-1-function-from-package)
+* [toHaveBeenNthCalledWith](#tohavebeennthcalledwith)
+* [When different repos calling a few times](#when-different-repos-calling-a-few-times)
+* [Override some function from package for specific case without impacting all package](#override-some-function-from-package-for-specific-case-without-impacting-all-package)
+* [⚠️ You cannot make spy on mocked object](#you-cannot-make-spy-on-mocked-object)
+* [⚠️ You cannot override behaviour of function that located in the same file](#you-cannot-override-behaviour-of-function-that-located-in-the-same-file)
 
 <br />
 
@@ -90,4 +92,96 @@ jest.spyOn(mockOrmManager, 'getRepository').mockImplementation((repoType) => {
   }
   throw new Error(`Unexepected repo type requested: ${repoType.name}`);
 });
+```
+<br />
+
+#### Override some function from package for specific case without impacting other cases in test file
+
+```ts
+import * as customerFlow from '@flows/Customer';
+
+// mock package and supply there real implementation
+// (it won't impact other things except case where you making spy, below)
+jest.mock('@flows/Customer', () => {
+  return {
+    ...jest.requireActual('@flows/Customer'),
+    __esModule: true,
+  };
+});
+
+// .......
+
+it('......', () => {
+   // for specific case do spy
+   const spy1 = jest.spyOn(customerFlow, 'deleteCrossReference');
+   expect(spy1).not.toBeCalled();
+   
+   // OR make another implementation
+   const spy1 = jest.spyOn(customerFlow, 'deleteCrossReference').mockImplementation(() => {});
+})
+```
+<br />
+
+#### You cannot make spy on mocked object
+
+###### Wrong ❌
+```ts
+const mockedCustomerConsent = jest.mock('./CustomerConsent');
+
+// wont work 
+jest.spyOn(mockedCustomerConsent, 'getAccessToken').mockImplementation(() => accessToken);
+```
+
+###### Right ✅
+```ts
+import * as customerConsent from './CustomerConsent';
+
+jest.mock('./CustomerConsent');
+
+describe('....', () => {
+   it('....', () => {
+      // making spy on mocked package, if package was not previously mocked it will be an error - jest.mock('./CustomerConsent');
+      const spySomeFunction = jest.spyOn(customerConsent, 'someFunction').mockImplementation(() => {});
+
+      // .......
+
+      expect(spySomeFunction).toBeCalled()
+   })
+})
+
+```
+<br />
+
+#### You cannot override behaviour of function that located in the same file
+
+###### ⁉️ Problem
+
+```js
+function test1() {}
+function test2() {
+  test1()
+}
+
+module.exports = {
+  test1, test2
+}
+
+```
+```js
+import * as myFunctions from './my-file'
+it('...', () => {
+   // this override wont work because it will use still actual implentation, because this function in the same file
+  jest.spyOn(myModule, 'test1').mockImplementation(() => {...});
+
+   await myFunctions.test2()
+})
+
+```
+
+###### ✅ Solution
+```ts
+ // it will not work, it will use actual implentation, to solve this:
+  * Move function to separate file
+  * Avoid using same function in testing function
+  * Mock all functions that in the "test1"
 ```
