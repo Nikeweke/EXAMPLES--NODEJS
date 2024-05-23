@@ -1,12 +1,12 @@
 # Jest Examples
 
 ### Content
-* [Mock behaviour 1 function from package](#mock-behaviour-1-function-from-package)
-* [toHaveBeenNthCalledWith](#tohavebeennthcalledwith)
-* [When different repos calling a few times](#when-different-repos-calling-a-few-times)
-* [Override some function from package for specific case without impacting all package](#override-some-function-from-package-for-specific-case-without-impacting-all-package)
-* [⚠️ You cannot make spy on mocked object](#you-cannot-make-spy-on-mocked-object)
-* [⚠️ You cannot override behaviour of function that located in the same file](#you-cannot-override-behaviour-of-function-that-located-in-the-same-file)
+* [Mock behaviour 1 function from package](#mock-behaviour-1-function-from-package---%EF%B8%8F-on-top)
+* [toHaveBeenNthCalledWith](#tohavebeennthcalledwith---%EF%B8%8F-on-top)
+* [When different repos calling a few times](#when-different-repos-calling-a-few-times---%EF%B8%8F-on-top)
+* [Override some function from package for specific case without impacting all package](#override-some-function-from-package-for-specific-case-without-impacting-all-package---%EF%B8%8F-on-top)
+* [⚠️ You cannot make spy on mocked object](#you-cannot-make-spy-on-mocked-object---%EF%B8%8F-on-top)
+* [⚠️ You cannot override behaviour of function that located in the same file](#you-cannot-override-behaviour-of-function-that-located-in-the-same-file---%EF%B8%8F-on-top)
 
 <br />
 
