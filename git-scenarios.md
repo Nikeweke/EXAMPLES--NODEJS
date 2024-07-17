@@ -1,4 +1,4 @@
-## Git Flow scenarios
+## Git Scenarios
 
 > how to do release, publish package,
 
