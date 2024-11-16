@@ -12,6 +12,7 @@
 * Insert a few records with check of previous
 * Make a chain with promises (waterfall)
 * `Promise.all` vs `Promise.allSettled`
+* Race condition: Function finishes or timeout error
 
 ---
 
@@ -202,5 +203,37 @@ const promises = [
   status: "fulfilled",
   value: -100
 }] */
+
+```
+
+### Race condition: Function finishes or timeout error
+
+```js
+// Simulate a function that resolves after some random time
+function performAsyncTask() {
+    return new Promise((resolve) => {
+        const delay = Math.random() * 5000; // Random delay between 0-5000ms
+        console.log(`Async task will take ${delay.toFixed(0)}ms`);
+        setTimeout(() => resolve("Async task completed"), delay);
+    });
+}
+
+// Set a predefined timeout
+function timeout(ms) {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(`Timeout of ${ms}ms reached`), ms);
+    });
+}
+
+// Use Promise.race to take the first result
+const timeoutDuration = 3000; // 3 seconds
+
+Promise.race([performAsyncTask(), timeout(timeoutDuration)])
+    .then((result) => {
+        console.log("First action completed:", result);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
 
 ```
