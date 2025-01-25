@@ -2,7 +2,7 @@
 
 
 
-### DO BEFORE PR!
+### DO BEFORE MERGE a PR!
 
 - [ ] Understand a ticket
 - [ ] Ask many questions as you can before start 
@@ -10,4 +10,4 @@
 - [ ] Reproduce problem locally completely and test it 
 - [ ] Add tests 
 - [ ] Check a number of ticket in PR and branch-name
-- [ ] Send a PR for a review
+      
