@@ -50,8 +50,8 @@ git pull
 
 git switch develop
 
-# get current version of package, see next version to set in release sheet
-cat package.json|jq .version
+# get current version of package (2.42.0), see next version to set in release sheet (2.43.0)
+cat package.json|jq .version 
 
 git flow init
   > Which branch should be used for bringing forth production releases? (Select - master)
