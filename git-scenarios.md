@@ -12,13 +12,14 @@
 * publish new version:
 
 ```sh
-> git checkout main
-> git pull
-> npm version minor --no-git-tag-version
-> git add -A
-> git commit -m "bump version to 1.2.345" && git push
-> git tag 1.2.345 (update with your version number)
-> git push origin 1.2.345
+* git checkout develop
+* git pull
+* npm version minor --no-git-tag-version
+* git add -A
+* git commit -m "bump client to 1.1.0" 
+* git push
+* git tag cliet-1.1.0
+* git push origin client-1.1.0
 ```
 <br />
 
