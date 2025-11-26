@@ -4,6 +4,12 @@
 
 <br />
 
+### Push empty commit to retrigger github actions
+
+```sh
+git commit --allow-empty --no-verify -m "Trigger workflow"
+```
+
 ### Publish package
 
 * make PR
