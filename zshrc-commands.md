@@ -7,8 +7,8 @@ alias awsTest='export AWS_PROFILE=engTest && aws sts get-caller-identity'
 alias awsPreProd='export AWS_PROFILE=preProd && aws sts get-caller-identity'
 alias awsMarketingTest='export AWS_PROFILE=marketingTest && aws sts get-caller-identity'
 
-alias gitPush='git add -A && git commit -m "new update" --no-verify && git push --no-verify' 
 alias puller='git pull --no-rebase'
+alias pl='git pull --no-rebase'
 alias gb='git branch'
 alias gm='git checkout main && git pull'
 alias gce='git commit --allow-empty --no-verify -m "Trigger workflow"'
@@ -32,6 +32,12 @@ feat() {
   echo enter branch name in style - "[ticket-number]-name"
   read msg
   git checkout -b feature/SILO-$msg
+}
+
+bra() {
+  echo enter branch name
+  read msg
+  git checkout -b feature/$msg
 }
 
 alias awsume="source awsume"
