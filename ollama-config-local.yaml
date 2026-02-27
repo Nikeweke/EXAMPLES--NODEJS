@@ -1,0 +1,11 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models: 
+  - name: Remote Ollama
+    provider: openai
+    model: llama3.1:latest
+    apiBase: http://192.168.1.215:11434/v1
+    completionOptions:
+      stream: false
+
